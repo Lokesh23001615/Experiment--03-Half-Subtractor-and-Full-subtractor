@@ -1,3 +1,8 @@
+NAME: LOKESH M
+
+REFERENCE NUMBER: 23001615
+
+
 # Experiment--03-Half-Subtractor-and-Full-subtractor
 ## Implementation-of-Half-subtractor-and-Full-subtractor-circuit
 ## AIM:
@@ -25,7 +30,16 @@ A full subtractor is a combinational circuit that performs subtraction involving
 
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
-## Procedure
+## Procedure:
+1. Use module projname(input,output) to start the Verilog programmming.
+
+2. Assign inputs and outputs using the word input and output respectively.
+
+3. Use defined keywords like wire,assign and required logic gates to represent the boolean expression.
+
+4. Use each output to represnt onre for differnce and the other for borrow.
+
+5. End the verilog program using keyword endmodule
 
 
 
@@ -33,22 +47,53 @@ Write the detailed procedure here
 
 
 ## Program:
-/*
-Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+# Half subractor:
+```
+module hs(a,b,borrow,diff);
+input a,b;
+output diff,borrow;
+assign diff=a^b;
+assign borrow=~a&b;
+endmodule
+```
+# Full Subractor:
+```
+module hs(a,b,bin,borrow,diff);
+input a,b,bin;
+output diff,borrow;
+assign diff=(a^b)^bin;
+assign borrow=((~a)&&bin)||(b&&bin)||((~a)&&b);
+endmodule
+```
+# Truth table:
+# Half subractor::
 
-## Output:
+![halfsubtt](https://github.com/Lokesh23001615/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/144979337/14072f96-1dc8-4b9d-bb8c-2e95817db3ec)
 
-## Truthtable
+# Full subractor: 
 
+![fullsubtt](https://github.com/Lokesh23001615/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/144979337/a7ed65a9-8a81-46ce-9eb9-26be72badd75)
 
+# RTL Realisation:
 
-##  RTL realization
+# Half subractor:
 
+![halfsubrtl](https://github.com/Lokesh23001615/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/144979337/21982430-30eb-43bb-bc2e-a36e59ac1fee)
 
-## Timing diagram 
+# Full subractor:
+
+![fullsubRTL](https://github.com/Lokesh23001615/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/144979337/3299b48c-d91b-486a-81e7-c3992e249e8c)
+
+# Timing Diagram: 
+
+# Half Subractor:
+
+![halfsubwf](https://github.com/Lokesh23001615/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/144979337/28e7cc69-6edd-4d43-baa4-3f0fbf0095fd)
+
+# Full Subractor:
+
+![fullsubwf](https://github.com/Lokesh23001615/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/144979337/f1814025-223b-458e-bba2-9b33ff20865a)
+
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
