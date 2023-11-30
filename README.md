@@ -49,7 +49,7 @@ Write the detailed procedure here
 ## Program:
 # Half subractor:
 ```
-module hs(a,b,borrow,diff);
+module exp4(a,b,borrow,diff);
 input a,b;
 output diff,borrow;
 assign diff=a^b;
@@ -58,7 +58,7 @@ endmodule
 ```
 # Full Subractor:
 ```
-module hs(a,b,bin,borrow,diff);
+module exp4(a,b,bin,borrow,diff);
 input a,b,bin;
 output diff,borrow;
 assign diff=(a^b)^bin;
